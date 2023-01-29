@@ -1,17 +1,43 @@
 body{
-  background: #000;
-  color: white;
+  background-image: linear-gradient(to right,#ff69b4 , #8b00ff );
 }
 
 .Image__Preview{
   width: 500px;
   height: auto;
+  /* margin: auto; */
+  position: absolute;
+  left: 10px;
 }
 
 #opCanvas{
-  width: 500px;
-  height: 400px;
-  top: 100px;
-  left: 10px;
+  /* width: 800px; */
+  height: 700px;
+  width: auto;
+  top: 0px;
+  left: 700px;
   position: relative;
+}
+
+h2{
+  text-align: center;
+  color: white;
+  font-size: 80px;
+}
+
+#inputFile{
+  position: relative;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+input[type="file"] {
+  font-size: 40px;
+  color: white;
+}
+
+.inpContainer{
+  height: 100px;
+  width: 400px;
+  margin: auto;
 }

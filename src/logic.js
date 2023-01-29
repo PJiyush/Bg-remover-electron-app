@@ -47,11 +47,6 @@ inputFile.onchange = ()=>{
                         imageFrameData.data[interval+3] = 0;
                     }
                 }
-                else if (g<60) {
-                    if (r>b) {
-                        imageFrameData.data[interval+3] = 0;
-                    }
-                }
             }
             opCanvasContext.putImageData(imageFrameData, 0,0);
 
