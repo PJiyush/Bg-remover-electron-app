@@ -5,5 +5,13 @@ body{
 
 .Image__Preview{
   width: 500px;
-  height: 500px;
+  height: auto;
+}
+
+#opCanvas{
+  width: 500px;
+  height: 400px;
+  top: 100px;
+  left: 10px;
+  position: relative;
 }
