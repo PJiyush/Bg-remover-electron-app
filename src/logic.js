@@ -33,7 +33,29 @@ inputFile.onchange = ()=>{
             opCanvas.height = height
             console.log(opCanvas.width, opCanvas.height);
             opCanvasContext.drawImage(img, 0,0, width, height);
-                    console.log("Image is being drawn");
+            var imageFrameData = opCanvasContext.getImageData(0,0,width,height);
+            console.log(imageFrameData.data[0]);
+            let pixelLength = imageFrameData.data.length/4
+
+            for(let pixel=0; pixel<pixelLength; pixel++){
+                let interval = pixel*4
+                let r = imageFrameData.data[interval+0]
+                let g = imageFrameData.data[interval+1]
+                let b = imageFrameData.data[interval+2]
+                if (g>60) {
+                    if (r<0.9*g && b<g) {
+                        imageFrameData.data[interval+3] = 0;
+                    }
+                }
+                else if (g<60) {
+                    if (r>b) {
+                        imageFrameData.data[interval+3] = 0;
+                    }
+                }
+            }
+            opCanvasContext.putImageData(imageFrameData, 0,0);
+
+            
         },1000)
     }
 }
